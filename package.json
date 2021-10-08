@@ -1,0 +1,29 @@
+{
+  "name": "uninstall",
+  "version": "1.0.0",
+  "description": "Developing API with Graphql using NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "Arthur Atamuradov",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "sequelize": "^5.8.1",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArthurAtamuradov/API-with-Graphql-NodeJS.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ArthurAtamuradov/API-with-Graphql-NodeJS/issues"
+  },
+  "homepage": "https://github.com/ArthurAtamuradov/API-with-Graphql-NodeJS#readme"
+}
