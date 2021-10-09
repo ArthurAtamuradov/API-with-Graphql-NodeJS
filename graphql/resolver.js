@@ -1,3 +1,6 @@
+const todo = require("../models/todo");
+const Todo = require("../models/todo");
+
 const users = [
   {
     name: "Mekan",
@@ -34,5 +37,31 @@ module.exports = {
     };
     users.push(user);
     return user;
+  },
+  async getTodos() {
+    try {
+      return await Todo.findAll();
+    } catch (error) {
+      throw Error("error");
+    }
+  },
+  async createTodo({ todo: { title, done = false } }) {
+    const newTodo = await Todo.create(title, done);
+    return newTodo;
+  },
+  async completeTodo({ id }) {
+    const todo = await Todo.findByPk(id);
+    todo.done = true;
+    await todo.save();
+    return todo;
+  },
+  async deleteTodo({ id }) {
+    const todos = await Todo.findAll({
+      where: {
+        id,
+      },
+    });
+    await todo[0].destroy();
+    return true;
   },
 };
